@@ -4,3 +4,15 @@
   padding: 2rem;
   text-align: center;
 }
+
+header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.5px solid black;
+}
+
+nav > ul li {
+  display: inline;
+  padding: 0.2rem;
+  padding-bottom: 1rem;
+}
