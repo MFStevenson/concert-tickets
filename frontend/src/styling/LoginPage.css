@@ -1,0 +1,13 @@
+#login-form label {
+  display: block;
+}
+
+#login-form label input {
+  white-space: pre;
+  border-style: none;
+  background-color: transparent;
+  border-bottom: 1px solid #1b2d45;
+  width: 100%;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}

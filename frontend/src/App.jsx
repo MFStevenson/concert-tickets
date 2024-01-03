@@ -8,6 +8,7 @@ import RegisterPage from "./pages/RegisterPage";
 import TicketsPage from "./pages/TicketsPage";
 import Errors from "./components/Errors";
 import ProfilePage from "./pages/ProfilePage";
+import SuccessPage from "./pages/SuccessPage";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/concerts" element={<HomePage />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
         <Route path="/register" element={<RegisterPage />}></Route>
+        <Route path="/register/success" element={<SuccessPage />}></Route>
         <Route path="/profile" element={<ProfilePage />}></Route>
         <Route path="/mytickets" element={<TicketsPage />}></Route>
         <Route
