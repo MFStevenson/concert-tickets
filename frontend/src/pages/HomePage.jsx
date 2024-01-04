@@ -9,12 +9,13 @@ const HomePage = () => {
   useEffect(() => {
     setIsLoading(true);
     getConcerts()
-      .then((concertsData) => {
-        setConcerts(concertsData);
+      .then((res) => {
+        setConcerts(res.data._embedded.events);
         setIsLoading(false);
       })
       .catch((error) => {
         console.error("Error fetching concerts:", error);
+        setIsLoading(false);
       });
   }, []);
 
