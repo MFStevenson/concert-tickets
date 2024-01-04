@@ -8,7 +8,6 @@ const RegisterForm = () => {
     surname: "",
     username: "",
     email: "",
-    profile_pic_url: "",
     password: "",
     confirm_password: "",
   });
@@ -76,20 +75,9 @@ const RegisterForm = () => {
         ></input>
       </label>
       <label>
-        Email
-        <input
-          type="text"
-          required
-          name="profile_pic_url"
-          placeholder="img_url"
-          value={formData.profile_pic_url}
-          onChange={updateFormData}
-        ></input>
-      </label>
-      <label>
         Password
         <input
-          type="text"
+          type="password"
           required
           name="password"
           value={formData.password}
@@ -99,7 +87,7 @@ const RegisterForm = () => {
       <label>
         Confirm Password
         <input
-          type="text"
+          type="password"
           required
           name="confirm_password"
           value={formData.confirm_password}

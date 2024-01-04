@@ -44,6 +44,7 @@ const LoginForm = () => {
         <input
           required
           type="text"
+          name="username"
           placeholder="username"
           value={input.username}
           onChange={updateInput}
@@ -53,7 +54,8 @@ const LoginForm = () => {
         Password*
         <input
           required
-          type="text"
+          type="password"
+          name="password"
           placeholder="password"
           value={input.password}
           onChange={updateInput}
