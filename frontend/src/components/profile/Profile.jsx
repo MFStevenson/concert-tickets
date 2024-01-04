@@ -1,5 +1,22 @@
+import AboutMe from "./About-me";
+import {useState} from "react";
+
+
 const Profile = () => {
-  return <h2> Profile </h2>;
-};
+
+
+  return (
+  <div> 
+  <h2> Profile </h2>
+  <h3 className="profile-name-card">
+    Name
+  </h3>
+
+ <AboutMe/>
+
+  </div>
+  )
+}
+;
 
 export default Profile;
