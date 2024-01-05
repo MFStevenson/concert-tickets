@@ -10,6 +10,7 @@ import Errors from "./components/Errors";
 import ProfilePage from "./pages/ProfilePage";
 import SuccessPage from "./pages/SuccessPage";
 import SingleTicketPage from "./pages/SingleTicketPage";
+import TransferPage from "./pages/TransferPage";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/profile" element={<ProfilePage />}></Route>
         <Route path="/mytickets" element={<TicketsPage />}></Route>
         <Route path="/ticket/1" element={<SingleTicketPage />}></Route>
+        <Route path="/ticket/1/transfer" element={<TransferPage />}></Route>
         <Route
           path="/*"
           element={<Errors msg={"path not found"} status={404} />}
