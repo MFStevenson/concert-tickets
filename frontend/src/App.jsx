@@ -8,6 +8,9 @@ import RegisterPage from "./pages/RegisterPage";
 import TicketsPage from "./pages/TicketsPage";
 import Errors from "./components/Errors";
 import ProfilePage from "./pages/ProfilePage";
+import SuccessPage from "./pages/SuccessPage";
+import SingleTicketPage from "./pages/SingleTicketPage";
+import TransferPage from "./pages/TransferPage";
 import ConcertPage from "./pages/ConcertPage";
 import BuyPage from "./pages/BuyPage";
 
@@ -21,8 +24,11 @@ function App() {
         <Route path="/concerts" element={<HomePage />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
         <Route path="/register" element={<RegisterPage />}></Route>
+        <Route path="/register/success" element={<SuccessPage />}></Route>
         <Route path="/profile" element={<ProfilePage />}></Route>
         <Route path="/mytickets" element={<TicketsPage />}></Route>
+        <Route path="/ticket/1" element={<SingleTicketPage />}></Route>
+        <Route path="/ticket/1/transfer" element={<TransferPage />}></Route>
         <Route path="/concerts/:concert_id" element={<ConcertPage />}></Route>
         <Route path="/concerts/:concert_id/buy" element={<BuyPage />}></Route>
         <Route

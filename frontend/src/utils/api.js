@@ -17,3 +17,8 @@ export const getConcertDetails = (concert_id) => {
     `https://app.ticketmaster.com/discovery/v2/events/${concert_id}.json?&apikey=ZANfyTO7Sv3wE8YIlWtN8LSpXgdH8FDY`
   );
 };
+
+// non-ticketmaster functionality
+export const getUser = () => {};
+
+export const postUser = () => {};
