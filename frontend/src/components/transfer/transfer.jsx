@@ -1,7 +1,3 @@
-
-
-
-
 const Transfer = () => {
 
     const handleConfirm = (event) => {

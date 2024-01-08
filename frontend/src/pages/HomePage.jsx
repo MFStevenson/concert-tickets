@@ -34,7 +34,7 @@ const HomePage = () => {
 
   return (
     <div className="HomePage">
-      <h2>Home Page</h2>
+      <h2>Concerts</h2>
       <input
         type="text"
         placeholder="Search concerts..."
