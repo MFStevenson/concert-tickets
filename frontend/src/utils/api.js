@@ -22,3 +22,6 @@ export const getConcertDetails = (concert_id) => {
 export const getUser = () => {};
 
 export const postUser = () => {};
+
+// will post to ticket database
+export const buyTicket = () => {};
