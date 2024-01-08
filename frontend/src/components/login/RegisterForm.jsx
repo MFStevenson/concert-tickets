@@ -25,14 +25,15 @@ const RegisterForm = () => {
       setErr("Passwords do not match, please try again");
     } else {
       const postBody = {
-        "userName": formData.username,
-        "password": formData.password,
-        "email": formData.email,
-        "forename": formData.forename,
-        "surname": formData.surname,
-      }
-      postUser(postBody).then((res) => {navigate("/register/success");});
-      
+        userName: formData.username,
+        password: formData.password,
+        email: formData.email,
+        forename: formData.forename,
+        surname: formData.surname,
+      };
+      postUser(postBody).then((res) => {
+        navigate("/register/success");
+      });
     }
   };
   return (
