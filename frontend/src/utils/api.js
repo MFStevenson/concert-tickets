@@ -8,7 +8,7 @@ const api = axios.create({
 
 export const getConcerts = () => {
   return api.get(
-    "https://app.ticketmaster.com/discovery/v2/events.json?&apikey=ZANfyTO7Sv3wE8YIlWtN8LSpXgdH8FDY"
+    "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=GB&keyword=concert&apikey=ZANfyTO7Sv3wE8YIlWtN8LSpXgdH8FDY"
   );
 };
 

@@ -1,22 +1,13 @@
 import AboutMe from "./About-me";
-import {useState} from "react";
-
 
 const Profile = () => {
-
-
   return (
-  <div> 
-  <h2> Profile </h2>
-  <h3 className="profile-name-card">
-    Name
-  </h3>
+    <div>
+      <h2> Profile </h2>
+      <h3 className="profile-name-card">Name</h3>
 
- <AboutMe/>
-
-  </div>
-  )
-}
-;
-
+      <AboutMe />
+    </div>
+  );
+};
 export default Profile;
