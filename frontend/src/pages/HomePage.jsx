@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { getConcerts } from "../utils/api";
 
 const HomePage = () => {
@@ -41,11 +42,14 @@ const HomePage = () => {
         onChange={handleSearch}
       />
       <div className="ConcertList">
-        {concerts.map((concert) => (
-          <div key={concert.id} className="Concert">
-            <h3>{concert.name}</h3>
-          </div>
-        ))}
+        <ul>
+          {concerts.map((concert) => (
+            <li key={concert.id} className="Concert">
+              <h3>{concert.name}</h3>
+              <Link to={`/concerts/${concert.id}`}>See More</Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

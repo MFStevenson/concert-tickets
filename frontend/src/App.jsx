@@ -8,6 +8,8 @@ import RegisterPage from "./pages/RegisterPage";
 import TicketsPage from "./pages/TicketsPage";
 import Errors from "./components/Errors";
 import ProfilePage from "./pages/ProfilePage";
+import ConcertPage from "./pages/ConcertPage";
+import BuyPage from "./pages/BuyPage";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
         <Route path="/register" element={<RegisterPage />}></Route>
         <Route path="/profile" element={<ProfilePage />}></Route>
         <Route path="/mytickets" element={<TicketsPage />}></Route>
+        <Route path="/concerts/:concert_id" element={<ConcertPage />}></Route>
+        <Route path="/concerts/:concert_id/buy" element={<BuyPage />}></Route>
         <Route
           path="/*"
           element={<Errors msg={"path not found"} status={404} />}
