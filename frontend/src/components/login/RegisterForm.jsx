@@ -24,8 +24,15 @@ const RegisterForm = () => {
     if (formData.password !== formData.confirm_password) {
       setErr("Passwords do not match, please try again");
     } else {
-      //postUser(formData).then((res) => {});
-      navigate("/register/success");
+      const postBody = {
+        "userName": formData.username,
+        "password": formData.password,
+        "email": formData.email,
+        "forename": formData.forename,
+        "surname": formData.surname,
+      }
+      postUser(postBody).then((res) => {navigate("/register/success");});
+      
     }
   };
   return (

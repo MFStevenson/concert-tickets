@@ -1,4 +1,5 @@
 import axios from "axios";
+const backendApi =  axios.create({baseURL:"https://api20240108135812.azurewebsites.net/api"})
 const apiKey = "ZANfyTO7Sv3wE8YIlWtN8LSpXgdH8FDY";
 const apiSecret = "a3Wi6pMh7CRBNDyx";
 
@@ -21,7 +22,16 @@ export const getConcertDetails = (concert_id) => {
 // non-ticketmaster functionality
 export const getUser = () => {};
 
-export const postUser = () => {};
+export const postUser = (postBody) => {
+  return backendApi.post("/users", postBody)
+  .then(({data}) => {
+    console.log(data)
+  })
+  .catch(err => {
+    console.log(err)
+  })
+
+};
 
 // will post to ticket database
 export const buyTicket = () => {};
