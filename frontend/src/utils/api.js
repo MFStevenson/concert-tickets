@@ -22,7 +22,9 @@ export const getConcertDetails = (concert_id) => {
 };
 
 // non-ticketmaster functionality
-export const getUser = () => {};
+export const getUser = (username) => {
+  return backendApi.get(`/users/${username}`);
+};
 
 export const postUser = (postBody) => {
   return backendApi

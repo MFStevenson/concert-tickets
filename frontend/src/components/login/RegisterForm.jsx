@@ -1,8 +1,11 @@
 import { postUser } from "../../utils/api";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import bcrypt from "bcryptjs";
+
 const RegisterForm = () => {
   const [err, setErr] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     forename: "",
     surname: "",
@@ -19,23 +22,39 @@ const RegisterForm = () => {
     });
   };
 
+  const hashPassword = (password) => {
+    const salt = bcrypt.genSaltSync(8);
+    const hash = bcrypt.hashSync(password, salt);
+    return hash;
+  };
+
   const handleSubmit = (e) => {
+    setIsLoading(true);
     e.preventDefault();
     if (formData.password !== formData.confirm_password) {
       setErr("Passwords do not match, please try again");
     } else {
+      const hashed = hashPassword(formData.password).toString();
       const postBody = {
         userName: formData.username,
-        password: formData.password,
+        password: hashed,
         email: formData.email,
         forename: formData.forename,
         surname: formData.surname,
       };
-      postUser(postBody).then((res) => {
-        navigate("/register/success");
-      });
+      postUser(postBody)
+        .then(() => {
+          navigate("/register/success");
+        })
+        .catch((err) => {
+          setErr("Something went wrong, please try again");
+        })
+        .finally(() => {
+          setIsLoading(false);
+        });
     }
   };
+  if (isLoading) return <h3>Loading...</h3>;
   return (
     <form id="register-form" onSubmit={handleSubmit}>
       <label>
@@ -74,7 +93,7 @@ const RegisterForm = () => {
       <label>
         Email
         <input
-          type="text"
+          type="email"
           required
           name="email"
           placeholder="example@email.com"
