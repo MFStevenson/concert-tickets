@@ -1,15 +1,21 @@
 import { useState, useContext } from "react";
 import { UserContext } from "../../context/UserContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const AboutMe = () => {
-  const { user } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
   const [isEditing, setEditing] = useState(false);
   const [favGenre, setFavGenre] = useState("dance");
   const [favArtist, setFavArtist] = useState("Abc");
   const [bio, setBio] = useState("testing bio");
+  const navigate = useNavigate();
+
   const handleEdit = () => {
     setEditing(!isEditing);
+  };
+  const handleLogout = () => {
+    setUser({});
+    navigate("/");
   };
 
   if (isEditing) {
@@ -47,7 +53,7 @@ const AboutMe = () => {
         <Link to={"/mytickets"}>
           <button>View My Tickets</button>
         </Link>
-        <button>Logout</button>
+        <button onClick={handleLogout}>Logout</button>
         <button onClick={handleEdit}>Submit</button>
       </div>
     );
@@ -62,7 +68,7 @@ const AboutMe = () => {
         <Link to={"/mytickets"}>
           <button>View My Tickets</button>
         </Link>
-        <button>Logout</button>
+        <button onClick={handleLogout}>Logout</button>
         <button onClick={handleEdit}>Edit</button>
       </section>
     );

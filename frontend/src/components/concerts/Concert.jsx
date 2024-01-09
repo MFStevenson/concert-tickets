@@ -13,17 +13,19 @@ const Concert = ({ concertDetails }) => {
       </p>
       <p> The concert starts at {concertDetails.dates.start.localTime}</p>
       <p> The city is {concertDetails._embedded.venues[0].city.name}</p>
-      <p> The price of the ticket is £{concertDetails.priceRanges[0].min}</p> 
+      <p> The price of the ticket is £{concertDetails.priceRanges[0].min}</p>
       {/* //get rid of ticket with no price or price at 0 */}
       <img
         className="concert-image"
         src={concertDetails.images[0].url}
         alt={`${concertDetails.name} image`}
       />
-      <Link to={`/concerts/${concertDetails.id}/buy`}>Buy Ticket</Link>
+
       {Object.keys(user).length ? (
-        <Link to={`/concerts/${concertDetails.id}/buy`}>Buy Ticket</Link>
-      ) : null}
+        <Link to={`/concerts/${concertDetails.id}/buy`} state = {concertDetails}>Buy Ticket</Link>
+      ) : (
+        <Link to={`/login`}>Login to buy a ticket</Link>
+      )}
     </>
   );
 };

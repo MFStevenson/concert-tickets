@@ -12,6 +12,7 @@
   "dependencies": {
     "@google-pay/button-react": "^3.0.10",
     "axios": "^1.6.4",
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "module": "^1.2.5",
@@ -33,6 +34,5 @@
     "eslint-plugin-react-refresh": "^0.4.5",
     "vite": "^5.0.8",
     "vite-plugin-node-polyfills": "^0.19.0"
-  },
-  "proxy": "http://127.0.0.1:5173"
+  }
 }

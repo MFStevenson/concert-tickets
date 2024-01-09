@@ -29,7 +29,10 @@ function App() {
         <Route path="/register/success" element={<SuccessPage />}></Route>
         <Route path="/profile" element={<ProfilePage />}></Route>
         <Route path="/mytickets" element={<TicketsPage />}></Route>
-        <Route path="/ticket/:ticket_id" element={<SingleTicketPage />}></Route>
+        <Route
+          path="/mytickets/:ticket_id"
+          element={<SingleTicketPage />}
+        ></Route>
         <Route
           path="/ticket/:ticket_id/transfer"
           element={<TransferPage />}

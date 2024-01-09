@@ -2,27 +2,30 @@ import { useContext, useState } from "react";
 import { UserContext } from "../../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import { getUser } from "../../utils/api";
+import bcrypt from "bcryptjs";
 
 const LoginForm = () => {
   const { setUser } = useContext(UserContext);
-  const [input, setInput] = useState({ username: "", password: "" });
+  const [formData, setformData] = useState({ username: "", password: "" });
   const [err, setErr] = useState(null);
   const navigate = useNavigate();
 
-  const updateInput = (e) => {
-    setInput(() => {
-      return { ...input, [e.target.name]: e.target.value };
+  const updateformData = (e) => {
+    setformData(() => {
+      return { ...formData, [e.target.name]: e.target.value };
     });
   };
 
   const handleSubmit = (e) => {
-    getUser(input)
+    e.preventDefault();
+
+    getUser(formData.username)
       .then((res) => {
-        setUser(res.data.user);
         if (
-          input.username === res.data.user.username &&
-          input.password === res.data.user.password
+          formData.username === res.data[0].userName &&
+          bcrypt.compareSync(formData.password, res.data[0].password)
         ) {
+          setUser(res.data[0]);
           navigate("/profile");
         } else {
           setUser({});
@@ -31,11 +34,8 @@ const LoginForm = () => {
       })
       .catch(() => {
         setUser({});
-        setErr("Something went wrong, please try again");
+        setErr("Your username or password is incorrect, please try again");
       });
-
-    e.preventDefault();
-    setInput("");
   };
   return (
     <form id="login-form" onSubmit={handleSubmit}>
@@ -46,8 +46,8 @@ const LoginForm = () => {
           type="text"
           name="username"
           placeholder="username"
-          value={input.username}
-          onChange={updateInput}
+          value={formData.username}
+          onChange={updateformData}
         ></input>
       </label>
       <label>
@@ -57,8 +57,8 @@ const LoginForm = () => {
           type="password"
           name="password"
           placeholder="password"
-          value={input.password}
-          onChange={updateInput}
+          value={formData.password}
+          onChange={updateformData}
         ></input>
       </label>
 
