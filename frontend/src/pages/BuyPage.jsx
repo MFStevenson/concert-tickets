@@ -12,12 +12,12 @@ const BuyPage = () => {
   const handlePaymentSuccess = (paymentData) => {
     console.log("load payment data", paymentData);
     if (!paymentData) {
-      navigate(`/concerts/:concert_id/buy/unsuccessful`);
+      navigate(`/concerts/${concert_id}/buy/unsuccessful`);
     } else {
       setPaymentStatus("Payment Successful! Redirecting in a few seconds");
 
       setTimeout(() => {
-        navigate(`/concerts/:concert_id/buy/successful`);
+        navigate(`/concerts/${concert_id}/buy/successful`);
       }, 3000);
     }
   };
