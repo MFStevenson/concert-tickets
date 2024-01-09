@@ -22,7 +22,7 @@ const Concert = ({ concertDetails }) => {
       />
 
       {Object.keys(user).length ? (
-        <Link to={`/concerts/${concertDetails.id}/buy`}>Buy Ticket</Link>
+        <Link to={`/concerts/${concertDetails.id}/buy`} state = {concertDetails}>Buy Ticket</Link>
       ) : (
         <Link to={`/login`}>Login to buy a ticket</Link>
       )}
