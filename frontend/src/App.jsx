@@ -13,6 +13,8 @@ import SingleTicketPage from "./pages/SingleTicketPage";
 import TransferPage from "./pages/TransferPage";
 import ConcertPage from "./pages/ConcertPage";
 import BuyPage from "./pages/BuyPage";
+import BuySuccessfulPage from "./pages/BuySuccessfulPage";
+import BuyUnsuccessfulPage from "./pages/BuyUnsuccessfulPage";
 
 function App() {
   return (
@@ -37,6 +39,14 @@ function App() {
         ></Route>
         <Route path="/concerts/:concert_id" element={<ConcertPage />}></Route>
         <Route path="/concerts/:concert_id/buy" element={<BuyPage />}></Route>
+        <Route
+          path="/concerts/:concert_id/buy/successful"
+          element={<BuySuccessfulPage />}
+        ></Route>
+        <Route
+          path="/concerts/:concert_id/buy/unsuccessful"
+          element={<BuyUnsuccessfulPage />}
+        ></Route>
         <Route
           path="/*"
           element={<Errors msg={"path not found"} status={404} />}
