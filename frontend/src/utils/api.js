@@ -37,5 +37,8 @@ export const postUser = (postBody) => {
     });
 };
 
+export const getUserTickets = (uid) => {
+  return backendApi.get(`/tickets/${uid}`);
+};
 // will post to ticket database
 export const buyTicket = () => {};

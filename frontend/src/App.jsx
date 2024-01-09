@@ -13,8 +13,6 @@ import SingleTicketPage from "./pages/SingleTicketPage";
 import TransferPage from "./pages/TransferPage";
 import ConcertPage from "./pages/ConcertPage";
 import BuyPage from "./pages/BuyPage";
-import { useContext } from "react";
-import { UserContext } from "./context/UserContext";
 
 function App() {
   return (
@@ -29,7 +27,10 @@ function App() {
         <Route path="/register/success" element={<SuccessPage />}></Route>
         <Route path="/profile" element={<ProfilePage />}></Route>
         <Route path="/mytickets" element={<TicketsPage />}></Route>
-        <Route path="/ticket/:ticket_id" element={<SingleTicketPage />}></Route>
+        <Route
+          path="/mytickets/:ticket_id"
+          element={<SingleTicketPage />}
+        ></Route>
         <Route
           path="/ticket/:ticket_id/transfer"
           element={<TransferPage />}
