@@ -29,9 +29,6 @@ export const getUser = (username) => {
 export const postUser = (postBody) => {
   return backendApi
     .post("/users", postBody)
-    .then(({ data }) => {
-      console.log(data);
-    })
     .catch((err) => {
       console.log(err);
     });
