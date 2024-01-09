@@ -11,7 +11,6 @@ const TicketsPage = () => {
   useEffect(() => {
     getUserTickets(1)
       .then((res) => {
-        console.log(res.data);
         setTickets(res.data);
       })
       .catch((error) => {
@@ -31,7 +30,7 @@ const TicketsPage = () => {
       <div className="TicketList">
         <ul>
           {tickets.map((ticket) => (
-            <li key={ticket.id} className="ticket">
+            <li key={ticket.ticketId} className="ticket">
               <h3>{ticket.concertName}</h3>
               <Link to={`/mytickets/${ticket.ticketId}`}>View Ticket</Link>
             </li>
