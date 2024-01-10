@@ -7,7 +7,40 @@
   border-style: none;
   background-color: transparent;
   border-bottom: 1px solid #1b2d45;
-  width: 100%;
   margin-top: 1vh;
   margin-bottom: 1vh;
+  width: 100%;
+}
+
+.register-area{
+  font-family:  arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.25;
+  margin-bottom: 30px;
+  border: 5px solid #1d70b8;
+  background-color: #1d70b8;
+  color:white;
+}
+
+.register-content{
+  color: #0b0c0c;
+  padding: 15px;
+  background-color: #ffffff;
+}
+
+
+.button{
+  margin: 20px;
+  background-color: rgb(130,174,138);
+  height: 50px;
+  color: white;
+  font-size: 1.1em;
+  font-weight: 200;
+  box-shadow: 0 2px 0 rgb(92,136,103);
+  margin-bottom: 30px;
+
 }

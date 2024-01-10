@@ -1,3 +1,4 @@
+import "../styling/BuyPage.css";
 import { Link, useParams } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -53,17 +54,21 @@ const BuyPage = () => {
   };
 
   return (
-    <>
-      <h3>Buy ticket</h3>
+    <div className="body">
+      
 
-      <section className="ticket-info">
-        <p> Please confirm the ticket info</p>
+      <section className="ticket-area">
+      <h3>Buy ticket</h3>
+      <div className = "frame">
+      <p> Please confirm the ticket info</p>
+
+        
         <p> ConcertName: {concertDetails.name}</p>
         <p> Date: {concertDetails.dates.start.localDate} </p>
         <p> Start Time: {concertDetails.dates.start.localTime} </p>
         <p> Location: {concertDetails._embedded.venues[0].city.name}</p>
         <p> Price: {concertDetails.priceRanges[0].min}</p>
-      </section>
+        
 
       {/* contain details about buying and connect to api to complete purchase
       will link to tthe correct ticketpage */}
@@ -74,7 +79,9 @@ const BuyPage = () => {
         paymentRequest={paymentRequest}
         onLoadPaymentData={handlePaymentSuccess}
       />
-    </>
+      </div>
+      </section>
+    </div>
   );
 };
 

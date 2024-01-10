@@ -1,0 +1,19 @@
+.error-area{
+    font-family:  arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
+    margin-bottom: 30px;
+    border: 5px solid rgb(215,68,35);
+    background-color:  rgb(215,68,35);
+    color:white;
+}
+
+.error-content{
+    color: #0b0c0c;
+    padding: 15px;
+    background-color: #ffffff;
+}

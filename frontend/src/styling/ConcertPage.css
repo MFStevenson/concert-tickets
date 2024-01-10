@@ -1,0 +1,61 @@
+.body{
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+.concert-area{
+    
+    display: block;
+    background-color: rgb(236,233,200);
+    padding:2%;
+    max-width: fit-content;
+    border-radius: 3px;
+    margin: 10px;
+      
+}
+
+.concert-info-area{
+    font-family:  arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
+    margin-bottom: 30px;
+    border: 5px solid #1d70b8;
+    background-color: #1d70b8;
+    color:white;
+}
+
+.concert-content{
+    color: #0b0c0c;
+    padding: 15px;
+    background-color: #ffffff;
+  }
+
+.button-area{
+    margin:20px;
+}
+
+.concert-image{
+    max-width: 500px;
+    max-height: 480px;
+}
+
+.button{
+    
+        background-color: rgb(130,174,138);
+        height: 50px;
+        color: white;
+        font-size: 1.1em;
+        font-weight: 200;
+        box-shadow: 0 2px 0 rgb(92,136,103);
+        margin-bottom: 30px;
+      
+}
+
+.link{
+    color: white; 
+    text-decoration: none;
+}

@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { UserContext } from "../../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import { getUser } from "../../utils/api";
+import "../../styling/LoginPage.css"
 import bcrypt from "bcryptjs";
 
 const LoginForm = () => {
@@ -38,6 +39,7 @@ const LoginForm = () => {
       });
   };
   return (
+    
     <form id="login-form" onSubmit={handleSubmit}>
       <label>
         Username*{" "}
@@ -62,10 +64,11 @@ const LoginForm = () => {
         ></input>
       </label>
 
-      <button id="sign-in-btn">Sign in</button>
+      <button className = "button" id="sign-in-btn">Sign in</button>
 
       {err ? <p>{err}</p> : null}
     </form>
+   
   );
 };
 
