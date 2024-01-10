@@ -5,11 +5,11 @@ import { UserContext } from "../context/UserContext";
 import { getUserTickets } from "../utils/api";
 const TicketsPage = () => {
   const { user } = useContext(UserContext);
-
   const [tickets, setTickets] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    getUserTickets(1)
+    //change to id stored in state
+    getUserTickets(user.userId)
       .then((res) => {
         setTickets(res.data);
       })
@@ -32,7 +32,9 @@ const TicketsPage = () => {
           {tickets.map((ticket) => (
             <li key={ticket.ticketId} className="ticket">
               <h3>{ticket.concertName}</h3>
-              <Link to={`/mytickets/${ticket.ticketId}`}>View Ticket</Link>
+              <Link to={`/mytickets/${ticket.ticketId}`} state={ticket}>
+                View Ticket
+              </Link>
             </li>
           ))}
         </ul>

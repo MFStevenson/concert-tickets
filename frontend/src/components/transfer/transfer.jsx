@@ -1,10 +1,10 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { getUser, transferTicket } from "../../utils/api";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const Transfer = () => {
+  const { ticket_id } = useParams();
   const [input, setInput] = useState("");
-  const [newTicketHolder, setTicketHolder] = useState({});
   const [transferComplete, setTransferComplete] = useState(false);
 
   const handleConfirm = (event) => {
@@ -13,20 +13,18 @@ const Transfer = () => {
       //submit coding here
       getUser(input)
         .then((res) => {
-          setTicketHolder(res.data);
-          const postBody = {
-            name: concertDetails.name,
-            start_time: concertDetails.dates.start.localTime,
-            date: concertDetails.dates.start.localDate,
-            location: concertDetails._embedded.venues[0].city.name,
-            price: concertDetails.priceRanges[0].min,
-            email: newTicketHolder.email,
-            transaction_type: "buy",
-            qr: "", //previousQr
-            admit: 1,
-            uid: newTicketHolder.uid,
+          const newTicketHolder = {
+            uid: res.data[0].userId,
+            email: res.data[0].email,
           };
-          return transferTicket(postBody);
+
+          const patchBody = {
+            uid: newTicketHolder.uid,
+            ticketId: ticket_id,
+            email: newTicketHolder.email,
+            transactionType: "transfer",
+          };
+          return transferTicket(patchBody);
         })
         .then(() => {
           setTransferComplete(true);

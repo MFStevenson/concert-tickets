@@ -3,10 +3,13 @@ import { Link, useLocation } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 import { buyTicket } from "../utils/api";
 import cryptoRandomString from "crypto-random-string";
+import Errors from "../components/Errors";
 
 const BuySuccessfulPage = () => {
   const { user } = useContext(UserContext);
-  const { ticketGenerated, setTicketGenerated } = useState(false);
+  const [ticketGenerated, setTicketGenerated] = useState(false);
+  const [ticketId, setTicketId] = useState(0);
+  const [apiErr, setApiErr] = useState({});
 
   const location = useLocation();
   const concertDetails = location.state;
@@ -22,24 +25,34 @@ const BuySuccessfulPage = () => {
       location: concertDetails._embedded.venues[0].city.name,
       price: concertDetails.priceRanges[0].min,
       email: user.email,
-      transaction_type: "buy",
+      transactionType: "buy",
       qr: generateQrCode(),
       admit: 1,
-      uid: user.uid,
+      uid: user.userId,
     };
-    buyTicket(postBody).then(() => {
-      setTicketGenerated(true);
-    });
-  });
-  return (
-    <>
-      <h2>Your Purchase Was Successful</h2>
-      <p>Please wait for the ticket to be created </p>
-      {ticketGenerated ? (
-        <Link to={`/mytickets/${ticket_id}`}>View Ticket</Link>
-      ) : null}
-    </>
-  );
+    buyTicket(postBody)
+      .then((res) => {
+        setTicketId(res.data.responseData.ticketId);
+        setTicketGenerated(true);
+      })
+      .catch((err) => {
+        setApiErr(err);
+      });
+  }, []);
+
+  if (Object.keys(apiErr).length) {
+    return <Errors status={apiErr.status} msg={apiErr.msg} />;
+  } else {
+    return (
+      <>
+        <h2>Your Purchase Was Successful</h2>
+        <p>Please wait for the ticket to be created </p>
+        {ticketGenerated ? (
+          <Link to={`/mytickets/${ticketId}`}>View Ticket</Link>
+        ) : null}
+      </>
+    );
+  }
 };
 
 export default BuySuccessfulPage;
