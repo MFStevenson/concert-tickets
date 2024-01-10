@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { UserContext } from "../../context/UserContext";
 import { Link, useNavigate } from "react-router-dom";
+import "../../styling/ProfilePage.css"
 
 const AboutMe = () => {
   const { user, setUser } = useContext(UserContext);
@@ -51,10 +52,10 @@ const AboutMe = () => {
           </label>
         </form>
         <Link to={"/mytickets"}>
-          <button>View My Tickets</button>
+          <button className = "ticket-button">View My Tickets</button>
         </Link>
-        <button onClick={handleLogout}>Logout</button>
-        <button onClick={handleEdit}>Submit</button>
+        <button className = "logout-button" onClick={handleLogout}>Logout</button>
+        <button className = "edit-button " onClick={handleEdit}>Submit</button>
       </div>
     );
   } else {
@@ -66,10 +67,10 @@ const AboutMe = () => {
         <p> Bio: {bio}</p>
 
         <Link to={"/mytickets"}>
-          <button>View My Tickets</button>
+          <button className = "ticket-button">View My Tickets</button>
         </Link>
-        <button onClick={handleLogout}>Logout</button>
-        <button onClick={handleEdit}>Edit</button>
+        <button className = "logout-button" onClick={handleLogout}>Logout</button>
+        <button className = "edit-button "onClick={handleEdit}>Edit</button>
       </section>
     );
   }

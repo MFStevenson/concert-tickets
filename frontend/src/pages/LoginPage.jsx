@@ -7,8 +7,12 @@ const LoginPage = () => {
 
   return (
     <>
-      <h2>Login </h2>
-      <LoginForm />
+    <section className="login-area"> 
+      <h2 className ="login-title">Login </h2>
+      <div className ="login-content">
+      <LoginForm  />
+      </div>
+      </section> 
       <p>
         Don't have an account? <Link to="/register">Register Here</Link>
       </p>

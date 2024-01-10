@@ -122,7 +122,7 @@ const RegisterForm = () => {
         ></input>
       </label>
 
-      <button>Register</button>
+      <button className = "button">Register</button>
       {err ? <p>{err}</p> : null}
     </form>
   );

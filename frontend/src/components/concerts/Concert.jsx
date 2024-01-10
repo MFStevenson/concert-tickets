@@ -1,12 +1,17 @@
 import React from "react";
+import "../../styling/ConcertPage.css";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../context/UserContext";
 const Concert = ({ concertDetails }) => {
   const { user } = useContext(UserContext);
   return (
-    <>
-      <h2>{concertDetails.name}</h2>
+    
+    <div className = "body">
+      <section className = "concert-area"> 
+      <div className = "concert-info-area"> 
+      <h2 className = "concert-title">{concertDetails.name}</h2>
+      <section className = "concert-content"> 
       <p className="concert-date">
         {" "}
         Date: {concertDetails.dates.start.localDate}
@@ -20,13 +25,17 @@ const Concert = ({ concertDetails }) => {
         src={concertDetails.images[0].url}
         alt={`${concertDetails.name} image`}
       />
-
+      </section>
+      </div>
+<div className = "button-area"> 
       {Object.keys(user).length ? (
-        <Link to={`/concerts/${concertDetails.id}/buy`} state = {concertDetails}>Buy Ticket</Link>
+        <button className = "button"> <Link className="link" to={`/concerts/${concertDetails.id}/buy`} state = {concertDetails}>Buy Ticket</Link> </button>
       ) : (
-        <Link to={`/login`}>Login to buy a ticket</Link>
+        <button className = "button"> <Link className = "link" to={`/login`}>Login to buy a ticket</Link> </button>
       )}
-    </>
+      </div>
+  </section>
+    </div>
   );
 };
 

@@ -6,9 +6,14 @@ const RegisterPage = () => {
   
   return (
     <>
+    <div className="register-area"> 
       {" "}
+      
       <h2>Register</h2>
+      <section className ="register-content"> 
       <RegisterForm />
+      </section>
+      </div>
     </>
   );
 };

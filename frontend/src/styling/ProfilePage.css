@@ -1,0 +1,63 @@
+.ticket-button, .logout-button, .edit-button {
+    margin: 20px;
+    height: 50px;
+    color: white;
+    font-size: 1.1em;
+    font-weight: 200;
+    margin-bottom: 30px;
+    width: 150px; 
+    padding: 10px; 
+    border: 1px solid transparent; 
+    box-sizing: border-box; 
+    transition: box-shadow 0.2s, background-color 0.2s;
+}
+
+.edit-button {
+    background-color: rgb(130,174,138);
+    box-shadow: 0 2px 0 rgb(92,136,103);
+}
+
+.edit-button:hover {
+    box-shadow: 0 1px 0 rgb(92,136,103);
+    background-color: rgb(115,154,122);
+}
+
+.logout-button {
+    background-color: rgb(183,53,4);
+    box-shadow: 0 2px 0 orangered;
+}
+
+.logout-button:hover {
+    box-shadow: 0 1px 0 orangered;
+    background-color: rgb(163,48,3); 
+}
+
+.ticket-button {
+    background-color: rgb(17,99,173);
+    box-shadow: 0 2px 0 navy;
+}
+
+.ticket-button:hover {
+    box-shadow: 0 1px 0 navy;
+    background-color: rgb(15,89,156); 
+}
+
+.profile-area{
+    font-family:  arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
+    margin-bottom: 30px;
+    border: 5px solid #1d70b8;
+    background-color: #1d70b8;
+    color:white;
+}
+
+.profile-content{
+    color: #0b0c0c;
+    padding: 15px;
+    background-color: #ffffff;
+}
