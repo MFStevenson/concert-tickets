@@ -1,14 +1,43 @@
-import { Link } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { UserContext } from "../context/UserContext";
+import { buyTicket } from "../utils/api";
+import cryptoRandomString from "crypto-random-string";
 
 const BuySuccessfulPage = () => {
-  //change to ticket_id in database
-  const ticket_id = 1;
+  const { user } = useContext(UserContext);
+  const { ticketGenerated, setTicketGenerated } = useState(false);
+
+  const location = useLocation();
+  const concertDetails = location.state;
+
+  const generateQrCode = () => {
+    return cryptoRandomString({ length: 16 });
+  };
+  useEffect(() => {
+    const postBody = {
+      name: concertDetails.name,
+      start_time: concertDetails.dates.start.localTime,
+      date: concertDetails.dates.start.localDate,
+      location: concertDetails._embedded.venues[0].city.name,
+      price: concertDetails.priceRanges[0].min,
+      email: user.email,
+      transaction_type: "buy",
+      qr: generateQrCode(),
+      admit: 1,
+      uid: user.uid,
+    };
+    buyTicket(postBody).then(() => {
+      setTicketGenerated(true);
+    });
+  });
   return (
     <>
       <h2>Your Purchase Was Successful</h2>
-      <p>Please see the ticket below </p>
-      {/* link to ticket */}
-      <Link to={`/ticket/${ticket_id}`}>View Ticket</Link>
+      <p>Please wait for the ticket to be created </p>
+      {ticketGenerated ? (
+        <Link to={`/mytickets/${ticket_id}`}>View Ticket</Link>
+      ) : null}
     </>
   );
 };

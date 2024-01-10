@@ -5,19 +5,19 @@ import { useNavigate, useLocation } from "react-router-dom";
 import GooglePayButton from "@google-pay/button-react";
 
 const BuyPage = () => {
+  const { concert_id } = useParams();
   const location = useLocation();
   const concertDetails = location.state;
-  console.log(concertDetails);
-  let { ticket_id } = useParams();
   let navigate = useNavigate();
-  //temp assign till backend connected
-  ticket_id = 1;
+
   const [paymentStatus, setPaymentStatus] = useState("");
   const handlePaymentSuccess = (paymentData) => {
     console.log("load payment data", paymentData);
-    setPaymentStatus("Payment Successful! Redirecting in a few seconds");
+    setPaymentStatus("Payment Processing! Redirecting in a few seconds");
     setTimeout(() => {
-      navigate(`/ticket/${ticket_id}`);
+      navigate(`/concerts/${concert_id}/buy/successful`, {
+        state: concertDetails,
+      });
     }, 3000);
   };
 
@@ -70,9 +70,6 @@ const BuyPage = () => {
         <p> Price: {concertDetails.priceRanges[0].min}</p>
         
 
-      {/* contain details about buying and connect to api to complete purchase
-      will link to tthe correct ticketpage */}
-      {paymentStatus && <div>{paymentStatus}</div>}
       {paymentStatus && <div>{paymentStatus}</div>}
       <GooglePayButton
         environment="TEST"

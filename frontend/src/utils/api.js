@@ -27,15 +27,23 @@ export const getUser = (username) => {
 };
 
 export const postUser = (postBody) => {
-  return backendApi
-    .post("/users", postBody)
-    .catch((err) => {
-      console.log(err);
-    });
+  return backendApi.post("/users", postBody).catch((err) => {
+    console.log(err);
+  });
 };
 
 export const getUserTickets = (uid) => {
   return backendApi.get(`/tickets/${uid}`);
 };
-// will post to ticket database
-export const buyTicket = () => {};
+
+export const buyTicket = (postBody) => {
+  return backendApi.post(`/tickets`, postBody).catch((err) => {
+    console.log(err);
+  });
+};
+
+export const transferTicket = (postBody) => {
+  return backendApi.post(`/tickets`, postBody).catch((err) => {
+    console.log(err);
+  });
+};

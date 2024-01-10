@@ -14,7 +14,6 @@ const ConcertPage = () => {
     getConcertDetails(concert_id)
       .then((res) => {
         setConcertDetails(res.data);
-        console.log(res.data)
       })
       .catch((error) => {
         console.error("Error fetching concert details:", error);
