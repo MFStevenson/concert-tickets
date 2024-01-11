@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getConcerts } from "../utils/api";
 import Loading from "../components/Loading";
-import "../styling/HomePage.css"
-
+import "../styling/HomePage.css";
 
 const HomePage = () => {
   const [concerts, setConcerts] = useState([]);
@@ -32,34 +31,49 @@ const HomePage = () => {
   };
 
   if (isLoading) {
-    return (<> <Loading/> </>);
+    return (
+      <>
+        {" "}
+        <Loading />{" "}
+      </>
+    );
   }
 
   return (
-    <div className ="homepage">
-    <div className="home-area">
-      <h2>Concerts</h2>
-      <section className = "home-content"> 
-      <input className = "search-bar"
-        type="text"
-        placeholder="Search concerts..."
-        value={searchTerm}
-        onChange={handleSearch}
-      />
-    
-      <button className = "search-button" onClick = {handleSearch}> Search </button>
-      
-      <div className = "concert-grid">
-        <ul>
-          {concerts.map((concert) => (
-            <li key={concert.id} className="concert-list">
-               <Link to={`/concerts/${concert.id}`}><button className = "concert-block">{concert.name} </button></Link> 
-            </li>
-          ))}
-        </ul>
+    <div className="homepage">
+      <div className="home-area">
+        <h2>Concerts</h2>
+        <section className="home-content">
+          <input
+            className="search-bar"
+            type="text"
+            placeholder="Search concerts..."
+            value={searchTerm}
+            onChange={handleSearch}
+          />
+
+          <button className="search-button" onClick={handleSearch}>
+            {" "}
+            Search{" "}
+          </button>
+
+          <div className="concert-grid">
+            <ul>
+              {concerts.map((concert, index) => (
+                <li key={concert.id} className="concert-list">
+                  <Link className="concert-link" to={`/concerts/${concert.id}`}>
+                    <p className="concert-block">{concert.name} </p>
+                    <img
+                      src={concerts[index].images[0].url}
+                      alt={`${concert.name} image`}
+                    />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
       </div>
-      </section>
-    </div>
     </div>
   );
 };
