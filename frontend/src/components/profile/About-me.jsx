@@ -143,7 +143,12 @@ const AboutMe = ({
     return (
       <section className="about-me-card">
         <h4> About Me</h4>
-        <img src={picUrl} alt={"profile picture"} />
+        <img
+          src={
+            "https://cdn.icon-icons.com/icons2/3512/PNG/512/concert_online_music_icon_221030.png"
+          }
+          alt={"profile picture"}
+        />
         <p> My favourite genre of music is {favGenre}</p>
         <p> My favourite artist is {favArtist}</p>
         <p> Bio: {bio}</p>
