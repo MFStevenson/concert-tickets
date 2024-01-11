@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { getUser, transferTicket } from "../../utils/api";
 import { Link, useParams } from "react-router-dom";
+import "../../styling/TransferPage.css";
 
 const Transfer = () => {
   const { ticket_id } = useParams();
@@ -40,33 +41,37 @@ const Transfer = () => {
   };
 
   return (
-    <div>
+    <div className="transfer-area">
       <h2> Transfer </h2>
 
-      <p>
-        Please enter the username of the person you'd like to transfer the
-        ticket to.
-      </p>
-      <form>
-        <label>
-          Username
-          <input
-            type="text"
-            required
-            name="username"
-            placeholder="JohnS10"
-            value={input}
-            onChange={updateInput}
-          ></input>
-        </label>
-        <button onClick={handleConfirm}>Confirm</button>
-      </form>
-      {transferComplete ? (
-        <>
-          <p>Transfer Complete</p>
-          <Link to={"/mytickets"}>Return to my tickets</Link>
-        </>
-      ) : null}
+      <section className="transfer-content">
+        <p>
+          Please enter the username of the person you'd like to transfer the
+          ticket to.
+        </p>
+        <form className="transfer-form">
+          <label>
+            Username
+            <input
+              type="text"
+              required
+              name="username"
+              placeholder="JohnS10"
+              value={input}
+              onChange={updateInput}
+            ></input>
+          </label>
+          <button className="transfer-button" onClick={handleConfirm}>
+            Confirm
+          </button>
+        </form>
+        {transferComplete ? (
+          <>
+            <p>Transfer Complete</p>
+            <Link to={"/mytickets"}>Return to my tickets</Link>
+          </>
+        ) : null}
+      </section>
     </div>
   );
 };
