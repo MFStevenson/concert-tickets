@@ -10,6 +10,7 @@ const Profile = () => {
   const [favGenre, setFavGenre] = useState("");
   const [favArtist, setFavArtist] = useState("");
   const [bio, setBio] = useState("");
+  const [picUrl, setPicUrl] = useState("");
 
   useEffect(() => {
     getUserProfile(user.userId).then((res) => {
@@ -17,6 +18,7 @@ const Profile = () => {
       setFavGenre(res.data[0].favGenre);
       setFavArtist(res.data[0].favArtist);
       setBio(res.data[0].bio);
+      setPicUrl(res.data[0].profilePic);
     });
   }, []);
 
@@ -35,6 +37,8 @@ const Profile = () => {
           setFavArtist={setFavArtist}
           bio={bio}
           setBio={setBio}
+          picUrl={picUrl}
+          setPicUrl={setPicUrl}
         />
       </section>
     </div>

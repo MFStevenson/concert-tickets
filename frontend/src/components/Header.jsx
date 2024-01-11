@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 
 const Header = () => {
   const { user } = useContext(UserContext);
+  console.log(user);
 
   return (
     <header>
@@ -13,7 +14,9 @@ const Header = () => {
         <Link to="/profile">
           <img
             id="header-profile-pic"
-            src={user.avatar_url}
+            src={
+              "https://cdn.icon-icons.com/icons2/3512/PNG/512/concert_online_music_icon_221030.png"
+            }
             alt="profile picture"
           ></img>
         </Link>
