@@ -3,8 +3,7 @@
   margin: 0 auto;
   padding: 0;
   text-align: center;
-  font-family:  arial;
-  
+  font-family: arial;
 }
 
 header {
@@ -17,12 +16,17 @@ header {
   border-bottom: 10px solid #ffffff;
   color: #ffffff;
   background: #1d70b8;
-  padding:10px;
+  padding: 10px;
 }
 
+header img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 10px;
+}
 
 nav > ul li {
-  font-family:  arial;
+  font-family: arial;
   padding: 5px;
   margin: 5px;
   list-style-type: none;
@@ -32,44 +36,42 @@ nav ul {
   padding: 2px;
   margin: 5px;
   overflow: hidden;
-  background-color:#dadadb;
+  background-color: #dadadb;
 }
 
-
-.nav-button{
-  padding:10px;
+.nav-button {
+  padding: 10px;
   height: 100%;
   color: #1d70b8;
   font-size: 1.45rem;
   line-height: 1.1428571429;
   font-weight: 600;
-  width: fit-content; 
-  border: 2px solid transparent; 
+  width: fit-content;
+  border: 2px solid transparent;
   box-sizing: border-box;
-  border-color: black; 
+  border-color: black;
   margin: 12px;
   box-shadow: 0 2px 2px;
-
 }
-.nav-button:hover{
+.nav-button:hover {
   box-shadow: 0 1px 0 #939ca4;
   background-color: #939ca4;
 }
 
-.menu-button{
-  padding:5px;
+.menu-button {
+  padding: 5px;
   color: #1d70b8;
-  max-width:150px;
-  min-width:100px;
+  max-width: 150px;
+  min-width: 100px;
   font-size: 1.2rem;
   line-height: 1.1428571429;
   font-weight: 500;
   box-sizing: border-box;
-  border-color: black; 
+  border-color: black;
   box-shadow: 0 2px 2px;
 }
 
-.menu-button:hover{
+.menu-button:hover {
   box-shadow: 0 1px 0 #939ca4;
   background-color: #939ca4;
 }
@@ -77,4 +79,3 @@ nav ul {
 ul {
   list-style-type: none;
 }
-
