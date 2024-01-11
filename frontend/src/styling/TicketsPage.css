@@ -1,4 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Salsa&display=swap");
 
+
+h2 {
+  font-family: 'Salsa', sans-serif;
+}
 .area{
     
     font-family:  arial, sans-serif;

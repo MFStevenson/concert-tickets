@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Salsa&display=swap");
+
+
+h2 {
+  font-family: 'Salsa', sans-serif;
+}
 .single-ticket-area{
     font-family:  arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -7,8 +13,8 @@
     font-size: 1rem;
     line-height: 1.25;
     margin-bottom: 30px;
-    border: 5px solid rgb(215,68,35);
-    background-color: rgb(215,68,35);
+    border: 5px solid #a472c7;
+    background-color: #a472c7;
     color:white;
     border-radius:5px;
 }

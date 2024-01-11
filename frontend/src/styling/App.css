@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Salsa&display=swap");
 
+h2 {
+  font-family: 'Salsa', sans-serif;
+}
 
 #root {
   
@@ -9,18 +12,23 @@
   
 }
 
+header img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 10px;
+}
 
 header {
   display: flex;
   justify-content: space-between;
 
   font-weight: 400;
-  font-family: 'Salsa', sans-serif;;
+  font-family: 'Salsa', sans-serif;
  
   font-size: 0.875rem;
  
   color: #ffffff;
-  background: #503eee;
+  background: #cd885d;
   padding:10px;
   border-radius:5px;
 
@@ -70,5 +78,4 @@ nav ul {
 ul {
   list-style-type: none;
 }
-
 

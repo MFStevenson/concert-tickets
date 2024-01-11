@@ -93,3 +93,8 @@
 .profile-form label input:focus{
     width:98%;
   }
+
+  img {
+    width: 8rem;
+    height: 8rem;
+  }
