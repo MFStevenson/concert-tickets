@@ -7,7 +7,7 @@ const Concert = ({ concertDetails }) => {
   const { user } = useContext(UserContext);
   return (
     
-    <div className = "body">
+    <div className = "concert-body">
       <section className = "concert-area"> 
       <div className = "concert-info-area"> 
       <h2 className = "concert-title">{concertDetails.name}</h2>
@@ -27,11 +27,11 @@ const Concert = ({ concertDetails }) => {
       />
       </section>
       </div>
-<div className = "button-area"> 
+<div className = "concert-button-area"> 
       {Object.keys(user).length ? (
-        <button className = "button"> <Link className="link" to={`/concerts/${concertDetails.id}/buy`} state = {concertDetails}>Buy Ticket</Link> </button>
+        <button className = "concert-button"> <Link className="link" to={`/concerts/${concertDetails.id}/buy`} state = {concertDetails}>Buy Ticket</Link> </button>
       ) : (
-        <button className = "button"> <Link className = "link" to={`/login`}>Login to buy a ticket</Link> </button>
+        <button className = "concert-button"> <Link className = "link" to={`/login`}>Login to buy a ticket</Link> </button>
       )}
       </div>
   </section>

@@ -12,6 +12,7 @@
     border: 5px solid #1d70b8;
     background-color: #1d70b8;
     color:white;
+    border-radius:5px;
 }
   
 .content{
@@ -19,6 +20,7 @@
     color: #0b0c0c;
     padding: 15px;
     background-color: #ffffff;
+    border-radius:5px;
 }
 
 
@@ -36,6 +38,7 @@
     padding: 10px; 
     border: 1px solid transparent; 
     box-sizing: border-box; 
+    border-radius:5px;
   
 }
   

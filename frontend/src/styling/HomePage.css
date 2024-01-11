@@ -15,6 +15,8 @@
     border: 5px solid #1d70b8;
     background-color: #1d70b8;
     color:white;
+    border-radius:5px;
+
     
 }
 
@@ -35,12 +37,14 @@
     width: fit-content; 
     border: 1px solid transparent; 
     box-sizing: border-box; 
+    border-radius:5px;
   
 }
   
 .search-button {
     background-color: rgb(130,174,138);
     box-shadow: 0 2px 0 rgb(92,136,103);
+    border-radius:5px;
 }
   
 .search-button:hover {
@@ -62,6 +66,7 @@
     box-sizing: border-box; 
     background-color: #c8d8ed;
     transition: 0.4s ease-in-out;
+    border-radius:5px;
 }
 
 .search-bar:focus{
@@ -82,6 +87,7 @@
     box-sizing: border-box; 
     background-color: #1d70b8;
     box-shadow: 0 2px 0 #124776;
+    border-radius:5px;
 }
 
 .concert-block:hover{
@@ -95,3 +101,17 @@
     justify-content: center;
 }
 
+.concert-grid ul{
+
+
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+gap: 10px; 
+padding: 0;
+list-style-type: none; 
+justify-content: center; 
+
+  
+  
+
+}

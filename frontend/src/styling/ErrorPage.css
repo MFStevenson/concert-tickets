@@ -10,10 +10,12 @@
     border: 5px solid rgb(215,68,35);
     background-color:  rgb(215,68,35);
     color:white;
+    border-radius:5px;
 }
 
 .error-content{
     color: #0b0c0c;
     padding: 15px;
     background-color: #ffffff;
+    border-radius:5px;
 }

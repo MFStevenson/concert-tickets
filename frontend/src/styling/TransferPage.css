@@ -10,12 +10,14 @@
     border: 5px solid rgb(215,68,35);
     background-color:  rgb(215,68,35);
     color:white;
+    border-radius:5px;
 }
 
 .transfer-content{
     color: #0b0c0c;
     padding: 15px;
     background-color: #ffffff;
+    border-radius:5px;
 }
 
 .transfer-form label {
@@ -25,6 +27,7 @@
   justify-content: center;
   max-width: 500px; 
   margin: 0 auto; 
+  border-radius:5px;
 }
 
 .transfer-form label input{
@@ -40,6 +43,7 @@
     box-sizing: border-box; 
     background-color: #c8d8ed;
     transition: 0.4s ease-in-out;
+    border-radius:5px;
 }
 
 .transfer-form label input:focus{
@@ -60,6 +64,8 @@
     box-sizing: border-box; 
     background-color: rgb(130,174,138);
     box-shadow: 0 2px 0 rgb(92,136,103);
+    border-radius:5px;
+
 }
   
 

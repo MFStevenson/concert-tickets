@@ -10,12 +10,14 @@
     border: 5px solid #1d70b8;
     background-color: #1d70b8;
     color:white;
+    border-radius:5px;
 }
 
 .single-ticket-content{
     color: #0b0c0c;
     padding: 15px;
     background-color: #ffffff;
+    border-radius:5px;
   }
 
   .single-ticket-button{
@@ -32,6 +34,7 @@
     box-sizing: border-box; 
     background-color: rgb(130,174,138);
     box-shadow: 0 2px 0 rgb(92,136,103);
+    border-radius:5px;
   
 }
   

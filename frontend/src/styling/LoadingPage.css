@@ -29,9 +29,11 @@
     border: 5px solid rgb(236,233,200);
     background-color: rgb(236,233,200);
     color:#000000;
+    border-radius:5px;
 }
 
 .loading-content{
     padding: 15px;
     background-color: #ffffff;
+    border-radius:5px;
 }

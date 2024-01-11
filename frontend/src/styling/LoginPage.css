@@ -20,6 +20,7 @@
   box-sizing: border-box; 
   background-color: #c8d8ed;
   transition: 0.4s ease-in-out;
+  border-radius:5px;
 
 }
 #login-form label input:focus{
@@ -38,6 +39,7 @@
   border: 5px solid #1d70b8;
   background-color: #1d70b8;
   color:white;
+  border-radius:5px;
 }
 
 .login-content{
@@ -57,12 +59,14 @@
   padding: 10px; 
   border: 1px solid transparent; 
   box-sizing: border-box; 
+  border-radius:5px;
 
 }
 
 .button {
   background-color: rgb(130,174,138);
   box-shadow: 0 2px 0 rgb(92,136,103);
+  border-radius:5px;
 }
 
 .button:hover {
