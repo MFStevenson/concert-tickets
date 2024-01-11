@@ -23,7 +23,7 @@ const AboutMe = () => {
     return (
       <div className="about-me-card">
         <h4> About Me</h4>
-        <form>
+        <form className = "profile-form">
           <label>
             Favourite Genre:
             <input
