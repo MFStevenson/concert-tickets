@@ -1,7 +1,7 @@
-.homepage{
-    display:contents;
-    justify-content: center; 
-    align-items:center;
+.homepage {
+  display: contents;
+  justify-content: center;
+  align-items: center;
 }
 .home-area{
     font-family:  arial, sans-serif;
@@ -20,11 +20,10 @@
     
 }
 
-.home-content{
-    color: #0b0c0c;
-    padding: 15px;
-    background-color: #ffffff;
-    
+.home-content {
+  color: #0b0c0c;
+  padding: 15px;
+  background-color: #ffffff;
 }
 
 
@@ -40,16 +39,16 @@
     border-radius:5px;
   
 }
-  
+
 .search-button {
     background-color: rgb(130,174,138);
     box-shadow: 0 2px 0 rgb(92,136,103);
     border-radius:5px;
 }
-  
+
 .search-button:hover {
-    box-shadow: 0 1px 0 rgb(92,136,103);
-    background-color: rgb(115,154,122);
+  box-shadow: 0 1px 0 rgb(92, 136, 103);
+  background-color: rgb(115, 154, 122);
 }
 
 .search-bar{
@@ -69,8 +68,8 @@
     border-radius:5px;
 }
 
-.search-bar:focus{
-    width: 70%;
+.search-bar:focus {
+  width: 70%;
 }
   
 .concert-block{
@@ -95,10 +94,10 @@
     background-color: hsl(208, 74%, 27%);
 }
 
-.concert-list{
-    margin: 0;
-    display: flex;
-    justify-content: center;
+.concert-list {
+  margin: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .concert-grid ul{
@@ -114,4 +113,22 @@ justify-content: center;
   
   
 
+}
+.concert-link {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+.concert-grid ul img {
+  width: 8rem;
+  height: 5rem;
+  margin-bottom: 2px;
+}
+
+.concert-grid ul li {
+  display: grid;
+  border: 2px solid rgb(231, 222, 92);
+  padding: 0.5rem;
+  border-radius: 10px;
+  background-color: rgb(236, 233, 200);
 }
