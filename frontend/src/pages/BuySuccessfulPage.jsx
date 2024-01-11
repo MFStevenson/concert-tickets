@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 import { buyTicket } from "../utils/api";
+import "../styling/SuccessfulPage.css"
 import cryptoRandomString from "crypto-random-string";
 
 const BuySuccessfulPage = () => {
@@ -32,13 +33,15 @@ const BuySuccessfulPage = () => {
     });
   });
   return (
-    <>
+   <div className = "success-area">
       <h2>Your Purchase Was Successful</h2>
+      <section className ="success-content"> 
       <p>Please wait for the ticket to be created </p>
       {ticketGenerated ? (
-        <Link to={`/mytickets/${ticket_id}`}>View Ticket</Link>
+        <Link to={`/mytickets/${ticket_id}`}><button className = "button"> View Ticket </button></Link>
       ) : null}
-    </>
+      </section>
+</div>
   );
 };
 

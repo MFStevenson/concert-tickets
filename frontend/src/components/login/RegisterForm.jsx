@@ -2,6 +2,7 @@ import { postUser } from "../../utils/api";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import bcrypt from "bcryptjs";
+import Loading from "../Loading";
 
 const RegisterForm = () => {
   const [err, setErr] = useState(null);
@@ -54,7 +55,7 @@ const RegisterForm = () => {
         });
     }
   };
-  if (isLoading) return <h3>Loading...</h3>;
+  if (isLoading) return (<div> <Loading/> </div>);
   return (
     <form id="register-form" onSubmit={handleSubmit}>
       <label>

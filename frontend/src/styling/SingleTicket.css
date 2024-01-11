@@ -1,6 +1,4 @@
-
-.area{
-    
+.single-ticket-area{
     font-family:  arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -13,18 +11,14 @@
     background-color: #1d70b8;
     color:white;
 }
-  
-.content{
-    
+
+.single-ticket-content{
     color: #0b0c0c;
     padding: 15px;
     background-color: #ffffff;
-}
+  }
 
-
-  
-
-.button{
+  .single-ticket-button{
     margin: 20px;
     height: 50px;
     color: white;
@@ -36,16 +30,13 @@
     padding: 10px; 
     border: 1px solid transparent; 
     box-sizing: border-box; 
-  
-}
-  
-.button {
     background-color: rgb(130,174,138);
     box-shadow: 0 2px 0 rgb(92,136,103);
+  
 }
   
-.button:hover {
+  
+.single-ticket-button:hover {
     box-shadow: 0 1px 0 rgb(92,136,103);
     background-color: rgb(115,154,122);
 }
-

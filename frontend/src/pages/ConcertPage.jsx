@@ -3,6 +3,7 @@ import { getConcertDetails } from "../utils/api";
 import { useParams } from "react-router";
 
 import Concert from "../components/concerts/Concert";
+import Loading from "../components/Loading";
 
 const ConcertPage = () => {
   const { concert_id } = useParams();
@@ -24,7 +25,7 @@ const ConcertPage = () => {
   }, []);
 
   if (isLoading) {
-    return <h3>Loading...</h3>;
+    return (<><Loading/></>);
   }
 
   return <Concert concertDetails={concertDetails} />;

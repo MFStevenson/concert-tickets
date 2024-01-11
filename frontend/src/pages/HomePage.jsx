@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getConcerts } from "../utils/api";
+import Loading from "../components/Loading";
+import "../styling/HomePage.css"
+
 
 const HomePage = () => {
   const [concerts, setConcerts] = useState([]);
@@ -29,28 +32,34 @@ const HomePage = () => {
   };
 
   if (isLoading) {
-    return <h3>Loading...</h3>;
+    return (<> <Loading/> </>);
   }
 
   return (
-    <div className="HomePage">
+    <div className ="homepage">
+    <div className="home-area">
       <h2>Concerts</h2>
-      <input
+      <section className = "home-content"> 
+      <input className = "search-bar"
         type="text"
         placeholder="Search concerts..."
         value={searchTerm}
         onChange={handleSearch}
       />
-      <div className="ConcertList">
+    
+      <button className = "search-button" onClick = {handleSearch}> Search </button>
+      
+      <div className = "concert-grid">
         <ul>
           {concerts.map((concert) => (
-            <li key={concert.id} className="Concert">
-              <h3>{concert.name}</h3>
-              <Link to={`/concerts/${concert.id}`}>See More</Link>
+            <li key={concert.id} className="concert-list">
+               <Link to={`/concerts/${concert.id}`}><button className = "concert-block">{concert.name} </button></Link> 
             </li>
           ))}
         </ul>
       </div>
+      </section>
+    </div>
     </div>
   );
 };

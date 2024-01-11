@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { getUser, transferTicket } from "../../utils/api";
 import { Link } from "react-router-dom";
+import "../../styling/TransferPage.css"
 
 const Transfer = () => {
   const [input, setInput] = useState("");
@@ -42,14 +43,15 @@ const Transfer = () => {
   };
 
   return (
-    <div>
+    <div className ="transfer-area">
       <h2> Transfer </h2>
 
+<section className ="transfer-content"> 
       <p>
         Please enter the username of the person you'd like to transfer the
         ticket to.
       </p>
-      <form>
+      <form className = "transfer-form">
         <label>
           Username
           <input
@@ -61,7 +63,7 @@ const Transfer = () => {
             onChange={updateInput}
           ></input>
         </label>
-        <button onClick={handleConfirm}>Confirm</button>
+        <button className = "transfer-button" onClick={handleConfirm}>Confirm</button>
       </form>
       {transferComplete ? (
         <>
@@ -69,6 +71,7 @@ const Transfer = () => {
           <Link to={"/mytickets"}>Return to my tickets</Link>
         </>
       ) : null}
+      </section>
     </div>
   );
 };
