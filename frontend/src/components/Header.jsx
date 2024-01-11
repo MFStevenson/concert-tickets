@@ -9,7 +9,9 @@ const Header = () => {
 
   return (
     <header>
-      <h1>Concert Blocks</h1>
+      <Link className="header-link" to={"/"}>
+        <h1>Concert Blocks</h1>
+      </Link>
       {Object.keys(user).length ? (
         <Link to="/profile">
           <img

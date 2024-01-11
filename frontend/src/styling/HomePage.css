@@ -1,35 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Salsa&display=swap");
 
-
 h2 {
-  font-family: 'Salsa', sans-serif;
+  font-family: "Salsa", sans-serif;
 }
 
 #root {
-  background-color:#ffffff;
+  background-color: #ffffff;
 }
 
 .homepage {
   display: contents;
   justify-content: center;
   align-items: center;
-  
 }
-.home-area{
-    font-family:  arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-weight: 400;
-    font-size: 16px;
-    font-size: 1rem;
-    line-height: 1.25;
-    margin-bottom: 30px;
-    border: 5px solid #a472c7;
-    background-color: #a472c7;
-    color:white;
-    border-radius:5px;
-
-    
+.home-area {
+  font-family: arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.25;
+  margin-bottom: 30px;
+  border: 5px solid #a472c7;
+  background-color: #a472c7;
+  color: white;
+  border-radius: 5px;
 }
 
 .home-content {
@@ -38,24 +34,22 @@ h2 {
   background-color: #ffffff;
 }
 
-
-.search-button{
-    height: 50px;
-    color: white;
-    font-size: 1.1em;
-    font-weight: 200;
-    box-shadow: 0 2px 0;
-    width: fit-content; 
-    border: 1px solid transparent; 
-    box-sizing: border-box; 
-    border-radius:5px;
-  
+.search-button {
+  height: 50px;
+  color: white;
+  font-size: 1.1em;
+  font-weight: 200;
+  box-shadow: 0 2px 0;
+  width: fit-content;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  border-radius: 5px;
 }
 
 .search-button {
-    background-color: rgb(130,174,138);
-    box-shadow: 0 2px 0 rgb(92,136,103);
-    border-radius:5px;
+  background-color: rgb(130, 174, 138);
+  box-shadow: 0 2px 0 rgb(92, 136, 103);
+  border-radius: 5px;
 }
 
 .search-button:hover {
@@ -63,68 +57,60 @@ h2 {
   background-color: rgb(115, 154, 122);
 }
 
-.search-bar{
-    margin: 8px;
-    height: 50px;
-    color: black;
-    font-size: 1.1em;
-    font-weight: 200;
-    box-shadow: 2px 2px 2px 1px;
-    margin-bottom: 30px;
-    width: 60%; 
-    padding: 10px; 
-    border: 1px rgb(19, 14, 14); 
-    box-sizing: border-box; 
-    background-color: #c8d8ed;
-    transition: 0.4s ease-in-out;
-    border-radius:5px;
+.search-bar {
+  margin: 10px;
+  height: 50px;
+  color: black;
+  font-size: 1.1em;
+  font-weight: 200;
+  box-shadow: 2px 2px 2px 1px;
+  margin-bottom: 30px;
+  width: 60%;
+  padding: 10px;
+  border: 1px rgb(19, 14, 14);
+  box-sizing: border-box;
+  background-color: #c8d8ed;
+  transition: 0.4s ease-in-out;
+  border-radius: 5px;
 }
 
 .search-bar:focus {
   width: 70%;
 }
-  
-.concert-block{
-    margin: 2px;
-    height: 100px;
-    color: rgb(0, 0, 0);
-    font-size: 1.1em;
-    font-weight: 200;
-    
-    margin-bottom: 7px;
-    width: 130px; 
-    padding: 10px; 
-  
-    box-sizing: border-box; 
-    background-color: hsl(44, 78%, 62%);
-    
-    border-radius:5px;
+
+.concert-block {
+  margin: 2px;
+  height: 6rem;
+  color: rgb(0, 0, 0);
+  font-size: 1.1em;
+  font-weight: 200;
+  margin-bottom: 7px;
+  width: 130px;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: hsl(44, 78%, 62%);
+
+  border-radius: 5px;
 }
 
-.concert-block:hover{
-    box-shadow: 0 1px 0 #737612;
-    background-color: hsl(44, 62%, 36%);
+.concert-block:hover {
+  box-shadow: 0 1px 0 #737612;
+  background-color: hsl(44, 62%, 36%);
 }
 
 .concert-list {
-  margin: 0;
+  margin: 0.3rem;
   display: flex;
   justify-content: center;
 }
 
-.concert-grid ul{
-
-
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-gap: 10px; 
-padding: 0;
-list-style-type: none; 
-justify-content: center; 
-
-  
-  
-
+.concert-grid ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  padding: 0;
+  list-style-type: none;
+  justify-content: center;
 }
 .concert-link {
   color: rgb(0, 0, 0);
@@ -143,4 +129,6 @@ justify-content: center;
   padding: 0.5rem;
   border-radius: 10px;
   background-color: rgb(236, 233, 200);
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
 }

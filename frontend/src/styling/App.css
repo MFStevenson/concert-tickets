@@ -1,15 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Salsa&display=swap");
 
 h2 {
-  font-family: 'Salsa', sans-serif;
+  font-family: "Salsa", sans-serif;
 }
 
 #root {
-  
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-  background-color:#ffffff;
-  
+  background-color: #ffffff;
+}
+
+.header-link {
+  text-decoration: none;
+  color: white;
 }
 
 header img {
@@ -23,54 +26,50 @@ header {
   justify-content: space-between;
 
   font-weight: 400;
-  font-family: 'Salsa', sans-serif;
- 
+  font-family: "Salsa", sans-serif;
+
   font-size: 0.875rem;
- 
+
   color: #ffffff;
   background: #cd885d;
-  padding:10px;
-  border-radius:5px;
-
+  padding: 10px;
+  border-radius: 5px;
 }
 
-
 nav > ul li {
-  font-family:  arial;
+  font-family: arial;
   padding: 5px;
   margin: 5px;
-
 }
 
 nav ul {
   padding: 2px;
 
   overflow: hidden;
-  background-color:#fdfdfd;
+  background-color: #fdfdfd;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  gap: 5px; 
+  gap: 5px;
   padding: 0;
-  list-style-type: none; 
-  justify-content:left ; 
+  list-style-type: none;
+  justify-content: left;
 }
 
-
-.menu-button{
-  padding:5px;
+.menu-button {
+  padding: 5px;
   color: #5b1b6b;
-  max-width:150px;
-  min-width:100px;
+  max-width: 150px;
+  min-width: 100px;
   font-size: 1.2rem;
   line-height: 1.1428571429;
   font-weight: 500;
   box-sizing: border-box;
-  border-color: black; 
+  border-color: black;
   box-shadow: 0 2px 2px 0.3px;
-  border-radius:5px;
+  border-radius: 5px;
 }
 
-.menu-button:hover{
+.menu-button:hover {
   box-shadow: 0 1px 0 #939ca4;
   background-color: #939ca4;
 }
@@ -78,4 +77,3 @@ nav ul {
 ul {
   list-style-type: none;
 }
-
