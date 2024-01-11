@@ -12,7 +12,6 @@ const BuyPage = () => {
 
   const [paymentStatus, setPaymentStatus] = useState("");
   const handlePaymentSuccess = (paymentData) => {
-    console.log("load payment data", paymentData);
     setPaymentStatus("Payment Processing! Redirecting in a few seconds");
     setTimeout(() => {
       navigate(`/concerts/${concert_id}/buy/successful`, {

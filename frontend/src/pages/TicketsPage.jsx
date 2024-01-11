@@ -8,10 +8,10 @@ const TicketsPage = () => {
   const [tickets, setTickets] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    //change to id stored in state
     getUserTickets(user.userId)
       .then((res) => {
         setTickets(res.data);
+        console.log(tickets);
       })
       .catch((error) => {
         console.error("Error fetching concerts:", error);
@@ -31,7 +31,9 @@ const TicketsPage = () => {
         <ul>
           {tickets.map((ticket) => (
             <li key={ticket.ticketId} className="ticket">
-              <h3>{ticket.concertName}</h3>
+              <h3>{ticket.name}</h3>
+              <p>{ticket.date}</p>
+              <p>Starts at {ticket.startTime}</p>
               <Link to={`/mytickets/${ticket.ticketId}`} state={ticket}>
                 View Ticket
               </Link>

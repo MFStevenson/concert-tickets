@@ -1,10 +1,17 @@
 import "../../styling/ProfilePage.css";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { UserContext } from "../../context/UserContext";
 import { Link, useNavigate } from "react-router-dom";
 import { updateProfile } from "../../utils/api";
 
-const AboutMe = ({ userDetails }) => {
+const AboutMe = ({
+  favArtist,
+  favGenre,
+  bio,
+  setFavArtist,
+  setFavGenre,
+  setBio,
+}) => {
   const { user, setUser } = useContext(UserContext);
   const [isEditing, setEditing] = useState(false);
   const [formData, setFormData] = useState({
@@ -12,6 +19,7 @@ const AboutMe = ({ userDetails }) => {
     favArtist: "",
     bio: "",
   });
+
   const navigate = useNavigate();
 
   const updateFormData = (e) => {
@@ -30,7 +38,12 @@ const AboutMe = ({ userDetails }) => {
         bio: formData.bio,
         profilePic: "pic_url",
       };
-      updateProfile(patchBody);
+      setFavGenre(formData.favGenre);
+      setFavArtist(formData.favArtist);
+      setBio(formData.bio);
+      updateProfile(patchBody).catch((err) => {
+        console.log(err);
+      });
     }
   };
   const handleLogout = () => {
@@ -70,7 +83,7 @@ const AboutMe = ({ userDetails }) => {
             <input
               type="text"
               name="bio"
-              placeholder="type your favourite bio"
+              placeholder="type about yourself"
               value={formData.bio}
               onChange={updateFormData}
             />
@@ -91,9 +104,9 @@ const AboutMe = ({ userDetails }) => {
     return (
       <section className="about-me-card">
         <h4> About Me</h4>
-        <p> My favourite genre of music is {userDetails.favGenre}</p>
-        <p> My favourite artist is {userDetails.favArtist}</p>
-        <p> Bio: {userDetails.bio}</p>
+        <p> My favourite genre of music is {favGenre}</p>
+        <p> My favourite artist is {favArtist}</p>
+        <p> Bio: {bio}</p>
 
         <Link to={"/mytickets"}>
           <button className="ticket-button">View My Tickets</button>

@@ -1,9 +1,13 @@
 import QR from "./QRcode";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 const SingleTicket = ({ ticketDetails }) => {
   const { ticket_id } = useParams();
 
+  if (!ticketDetails) {
+    const location = useLocation();
+    ticketDetails = location.state;
+  }
   const navigate = useNavigate();
   function handleClick() {
     navigate(`/ticket/${ticket_id}/transfer`);

@@ -8,7 +8,7 @@ import Errors from "../components/Errors";
 const BuySuccessfulPage = () => {
   const { user } = useContext(UserContext);
   const [ticketGenerated, setTicketGenerated] = useState(false);
-  const [ticketId, setTicketId] = useState(0);
+  const [ticketDetails, setTicketDetails] = useState({});
   const [apiErr, setApiErr] = useState({});
 
   const location = useLocation();
@@ -32,7 +32,7 @@ const BuySuccessfulPage = () => {
     };
     buyTicket(postBody)
       .then((res) => {
-        setTicketId(res.data.responseData.ticketId);
+        setTicketDetails(res.data.responseData);
         setTicketGenerated(true);
       })
       .catch((err) => {
@@ -48,7 +48,12 @@ const BuySuccessfulPage = () => {
         <h2>Your Purchase Was Successful</h2>
         <p>Please wait for the ticket to be created </p>
         {ticketGenerated ? (
-          <Link to={`/mytickets/${ticketId}`}>View Ticket</Link>
+          <Link
+            to={`/mytickets/${ticketDetails.ticketId}`}
+            state={ticketDetails}
+          >
+            View Ticket
+          </Link>
         ) : null}
       </>
     );
