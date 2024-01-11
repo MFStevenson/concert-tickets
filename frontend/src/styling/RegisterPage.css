@@ -5,6 +5,7 @@
   justify-content: center;
   max-width: 500px; 
   margin: 0 auto; 
+  border-radius:5px;
 }
 
 #register-form label input {
@@ -20,6 +21,7 @@
   box-sizing: border-box; 
   background-color: #c8d8ed;
   transition: 0.4s ease-in-out;
+  border-radius:5px;
 }
 #register-form label input:focus{
   width:85%;
@@ -38,6 +40,7 @@
   border: 5px solid #1d70b8;
   background-color: #1d70b8;
   color:white;
+  border-radius:5px;
 }
 
 .register-content{
@@ -47,6 +50,7 @@
   display: flex;
   justify-content:center; 
   align-items:stretch; 
+  border-radius:5px;
 }
 
 
@@ -59,5 +63,6 @@
   font-weight: 200;
   box-shadow: 0 2px 0 rgb(92,136,103);
   margin-bottom: 30px;
+  border-radius:5px;
 
 }

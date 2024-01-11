@@ -8,14 +8,7 @@ const Navbar = () => {
 
   return (
     <nav>
-      <button
-        className="nav-button"
-        onClick={() => setMenuVisible(!menuVisible)}
-      >
-        Menu
-      </button>
-      {menuVisible && (
-        <ul className="menu">
+        <ul clasName = "menu">
           <li>
             <Link to={`/`}>
               <button className="menu-button">{"Concerts"}</button>
@@ -43,7 +36,6 @@ const Navbar = () => {
             </li>
           )}
         </ul>
-      )}
     </nav>
   );
 };

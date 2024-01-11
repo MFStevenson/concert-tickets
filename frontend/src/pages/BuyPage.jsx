@@ -63,7 +63,7 @@ const BuyPage = () => {
           <p> Date: {concertDetails.dates.start.localDate} </p>
           <p> Start Time: {concertDetails.dates.start.localTime} </p>
           <p> Location: {concertDetails._embedded.venues[0].city.name}</p>
-          <p> Price: {concertDetails.priceRanges[0].min}</p>
+          <p> Price: £{concertDetails.priceRanges[0].min}</p>
 
           {paymentStatus && <div>{paymentStatus}</div>}
           <GooglePayButton

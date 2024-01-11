@@ -1,97 +1,100 @@
-.ticket-button,
-.logout-button,
-.edit-button {
-  margin: 8px;
-  height: 50px;
-  color: white;
-  font-size: 1.1em;
-  font-weight: 200;
-  margin-bottom: 8px;
-  width: 150px;
-  padding: 10px;
-  border: 1px solid transparent;
-  box-sizing: border-box;
-  transition: box-shadow 0.2s, background-color 0.2s;
+.ticket-button, .logout-button, .edit-button {
+    margin: 8px;
+    height: 50px;
+    color: white;
+    font-size: 1.1em;
+    font-weight: 200;
+    margin-bottom: 8px;
+    width: 150px; 
+    padding: 10px; 
+    border: 1px solid transparent; 
+    box-sizing: border-box; 
+    transition: box-shadow 0.2s, background-color 0.2s;
+    border-radius:5px;
 }
 
 .edit-button {
-  background-color: rgb(130, 174, 138);
-  box-shadow: 0 2px 0 rgb(92, 136, 103);
+    background-color: rgb(130,174,138);
+    box-shadow: 0 2px 0 rgb(92,136,103);
 }
 
 .edit-button:hover {
-  box-shadow: 0 1px 0 rgb(92, 136, 103);
-  background-color: rgb(115, 154, 122);
+    box-shadow: 0 1px 0 rgb(92,136,103);
+    background-color: rgb(115,154,122);
 }
 
 .logout-button {
-  background-color: rgb(183, 53, 4);
-  box-shadow: 0 2px 0 orangered;
+    background-color: rgb(183,53,4);
+    box-shadow: 0 2px 0 orangered;
 }
 
 .logout-button:hover {
-  box-shadow: 0 1px 0 orangered;
-  background-color: rgb(163, 48, 3);
+    box-shadow: 0 1px 0 orangered;
+    background-color: rgb(163,48,3); 
 }
 
 .ticket-button {
-  background-color: rgb(17, 99, 173);
-  box-shadow: 0 2px 0 navy;
+    background-color: rgb(17,99,173);
+    box-shadow: 0 2px 0 navy;
 }
 
 .ticket-button:hover {
-  box-shadow: 0 1px 0 navy;
-  background-color: rgb(15, 89, 156);
+    box-shadow: 0 1px 0 navy;
+    background-color: rgb(15,89,156); 
 }
 
-.profile-area {
-  font-family: arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.25;
-  margin-bottom: 30px;
-  border: 5px solid #1d70b8;
-  background-color: #1d70b8;
-  color: white;
+.profile-area{
+    font-family:  arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
+    margin-bottom: 30px;
+    border: 5px solid #a472c7;
+    background-color: #a472c7;
+    color:white;
+    border-radius:5px;
 }
 
-.profile-content {
-  color: #0b0c0c;
-  padding: 15px;
-  background-color: #ffffff;
+.profile-content{
+    color: #0b0c0c;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius:5px;
 }
 
 .profile-form label {
-  display: flex;
+    display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-start; 
   justify-content: center;
-  max-width: 500px;
-  margin: 0 auto;
+  max-width: 500px; 
+  margin: 0 auto; 
+  border-radius:5px;
 }
-.profile-form label input {
-  margin: 8px;
-  height: 30px;
-  color: black;
-  font-size: 1.1em;
-  font-weight: 200;
-  box-shadow: 2px 2px 2px 1px;
-  width: 95%;
-  padding: 10px;
-  border: 1px rgb(19, 14, 14);
-  box-sizing: border-box;
-  background-color: #c8d8ed;
-  transition: 0.4s ease-in-out;
-}
-
-.profile-form label input:focus {
-  width: 98%;
+.profile-form label input{
+    margin: 8px;
+    height: 30px;
+    color: black;
+    font-size: 1.1em;
+    font-weight: 200;
+    box-shadow: 2px 2px 2px 1px;
+    width: 95%; 
+    padding: 10px; 
+    border: 1px rgb(19, 14, 14); 
+    box-sizing: border-box; 
+    background-color: #c8d8ed;
+    transition: 0.4s ease-in-out;
+    border-radius:5px;
 }
 
-img {
-  width: 8rem;
-  height: 8rem;
-}
+.profile-form label input:focus{
+    width:98%;
+  }
+
+  img {
+    width: 8rem;
+    height: 8rem;
+  }

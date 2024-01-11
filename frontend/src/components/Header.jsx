@@ -9,7 +9,7 @@ const Header = () => {
 
   return (
     <header>
-      <h1>Concert Tickets</h1>
+      <h1>Concert Blocks</h1>
       {Object.keys(user).length ? (
         <Link to="/profile">
           <img
@@ -21,7 +21,7 @@ const Header = () => {
           ></img>
         </Link>
       ) : (
-        <Link to="/login">Login</Link>
+        <p></p>
       )}
     </header>
   );

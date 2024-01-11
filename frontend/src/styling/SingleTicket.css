@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Salsa&display=swap");
+
+
+h2 {
+  font-family: 'Salsa', sans-serif;
+}
 .single-ticket-area{
     font-family:  arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -7,15 +13,17 @@
     font-size: 1rem;
     line-height: 1.25;
     margin-bottom: 30px;
-    border: 5px solid #1d70b8;
-    background-color: #1d70b8;
+    border: 5px solid #a472c7;
+    background-color: #a472c7;
     color:white;
+    border-radius:5px;
 }
 
 .single-ticket-content{
     color: #0b0c0c;
     padding: 15px;
     background-color: #ffffff;
+    border-radius:5px;
   }
 
   .single-ticket-button{
@@ -32,6 +40,7 @@
     box-sizing: border-box; 
     background-color: rgb(130,174,138);
     box-shadow: 0 2px 0 rgb(92,136,103);
+    border-radius:5px;
   
 }
   

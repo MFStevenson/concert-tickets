@@ -1,4 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Salsa&display=swap");
 
+
+h2 {
+  font-family: 'Salsa', sans-serif;
+}
 .area{
     
     font-family:  arial, sans-serif;
@@ -9,9 +14,10 @@
     font-size: 1rem;
     line-height: 1.25;
     margin-bottom: 30px;
-    border: 5px solid #1d70b8;
-    background-color: #1d70b8;
+    border: 5px solid #a472c7;
+    background-color: #a472c7;
     color:white;
+    border-radius:5px;
 }
   
 .content{
@@ -19,6 +25,7 @@
     color: #0b0c0c;
     padding: 15px;
     background-color: #ffffff;
+    border-radius:5px;
 }
 
 
@@ -36,6 +43,7 @@
     padding: 10px; 
     border: 1px solid transparent; 
     box-sizing: border-box; 
+    border-radius:5px;
   
 }
   
