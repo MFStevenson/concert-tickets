@@ -1,18 +1,50 @@
-import { useState, useContext } from "react";
+import "../../styling/ProfilePage.css";
+import { useState, useContext, useEffect } from "react";
 import { UserContext } from "../../context/UserContext";
 import { Link, useNavigate } from "react-router-dom";
-import "../../styling/ProfilePage.css"
+import { updateProfile } from "../../utils/api";
 
-const AboutMe = () => {
+const AboutMe = ({
+  favArtist,
+  favGenre,
+  bio,
+  setFavArtist,
+  setFavGenre,
+  setBio,
+}) => {
   const { user, setUser } = useContext(UserContext);
   const [isEditing, setEditing] = useState(false);
-  const [favGenre, setFavGenre] = useState("dance");
-  const [favArtist, setFavArtist] = useState("Abc");
-  const [bio, setBio] = useState("testing bio");
+  const [formData, setFormData] = useState({
+    favGenre: "",
+    favArtist: "",
+    bio: "",
+  });
+
   const navigate = useNavigate();
+
+  const updateFormData = (e) => {
+    setFormData(() => {
+      return { ...formData, [e.target.name]: e.target.value };
+    });
+  };
 
   const handleEdit = () => {
     setEditing(!isEditing);
+    if (isEditing) {
+      const patchBody = {
+        userId: user.userId,
+        favGenre: formData.favGenre,
+        favArtist: formData.favArtist,
+        bio: formData.bio,
+        profilePic: "pic_url",
+      };
+      setFavGenre(formData.favGenre);
+      setFavArtist(formData.favArtist);
+      setBio(formData.bio);
+      updateProfile(patchBody).catch((err) => {
+        console.log(err);
+      });
+    }
   };
   const handleLogout = () => {
     setUser({});
@@ -28,8 +60,10 @@ const AboutMe = () => {
             Favourite Genre:
             <input
               type="text"
-              value={favGenre}
-              onChange={(event) => setFavGenre(event.target.value)}
+              name="favGenre"
+              placeholder="type your favourite genre"
+              value={formData.favGenre}
+              onChange={updateFormData}
             />
           </label>
 
@@ -37,8 +71,10 @@ const AboutMe = () => {
             Favourite Artist:
             <input
               type="text"
-              value={favArtist}
-              onChange={(event) => setFavArtist(event.target.value)}
+              name="favArtist"
+              placeholder="type your favourite artist"
+              value={formData.favArtist}
+              onChange={updateFormData}
             />
           </label>
 
@@ -46,31 +82,41 @@ const AboutMe = () => {
             Bio:
             <input
               type="text"
-              value={bio}
-              onChange={(event) => setBio(event.target.value)}
+              name="bio"
+              placeholder="type about yourself"
+              value={formData.bio}
+              onChange={updateFormData}
             />
           </label>
         </form>
         <Link to={"/mytickets"}>
-          <button className = "ticket-button">View My Tickets</button>
+          <button className="ticket-button">View My Tickets</button>
         </Link>
-        <button className = "logout-button" onClick={handleLogout}>Logout</button>
-        <button className = "edit-button " onClick={handleEdit}>Submit</button>
+        <button className="logout-button" onClick={handleLogout}>
+          Logout
+        </button>
+        <button className="edit-button " onClick={handleEdit}>
+          Submit
+        </button>
       </div>
     );
   } else {
     return (
       <section className="about-me-card">
         <h4> About Me</h4>
-        <p> Favourite Genre:{favGenre}</p>
-        <p> Favourite Artist:{favArtist}</p>
+        <p> My favourite genre of music is {favGenre}</p>
+        <p> My favourite artist is {favArtist}</p>
         <p> Bio: {bio}</p>
 
         <Link to={"/mytickets"}>
-          <button className = "ticket-button">View My Tickets</button>
+          <button className="ticket-button">View My Tickets</button>
         </Link>
-        <button className = "logout-button" onClick={handleLogout}>Logout</button>
-        <button className = "edit-button "onClick={handleEdit}>Edit</button>
+        <button className="logout-button" onClick={handleLogout}>
+          Logout
+        </button>
+        <button className="edit-button " onClick={handleEdit}>
+          Edit
+        </button>
       </section>
     );
   }

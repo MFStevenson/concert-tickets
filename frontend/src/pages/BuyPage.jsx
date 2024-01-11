@@ -12,7 +12,6 @@ const BuyPage = () => {
 
   const [paymentStatus, setPaymentStatus] = useState("");
   const handlePaymentSuccess = (paymentData) => {
-    console.log("load payment data", paymentData);
     setPaymentStatus("Payment Processing! Redirecting in a few seconds");
     setTimeout(() => {
       navigate(`/concerts/${concert_id}/buy/successful`, {
@@ -55,28 +54,24 @@ const BuyPage = () => {
 
   return (
     <div className="body">
-      
-
       <section className="ticket-area">
-      <h3>Buy ticket</h3>
-      <div className = "frame">
-      <p> Please confirm the ticket info</p>
+        <h3>Buy ticket</h3>
+        <div className="frame">
+          <p> Please confirm the ticket info</p>
 
-        
-        <p> ConcertName: {concertDetails.name}</p>
-        <p> Date: {concertDetails.dates.start.localDate} </p>
-        <p> Start Time: {concertDetails.dates.start.localTime} </p>
-        <p> Location: {concertDetails._embedded.venues[0].city.name}</p>
-        <p> Price: {concertDetails.priceRanges[0].min}</p>
-        
+          <p> ConcertName: {concertDetails.name}</p>
+          <p> Date: {concertDetails.dates.start.localDate} </p>
+          <p> Start Time: {concertDetails.dates.start.localTime} </p>
+          <p> Location: {concertDetails._embedded.venues[0].city.name}</p>
+          <p> Price: {concertDetails.priceRanges[0].min}</p>
 
-      {paymentStatus && <div>{paymentStatus}</div>}
-      <GooglePayButton
-        environment="TEST"
-        paymentRequest={paymentRequest}
-        onLoadPaymentData={handlePaymentSuccess}
-      />
-      </div>
+          {paymentStatus && <div>{paymentStatus}</div>}
+          <GooglePayButton
+            environment="TEST"
+            paymentRequest={paymentRequest}
+            onLoadPaymentData={handlePaymentSuccess}
+          />
+        </div>
       </section>
     </div>
   );
