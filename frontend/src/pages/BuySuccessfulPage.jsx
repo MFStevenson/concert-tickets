@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 import { buyTicket } from "../utils/api";
 import "../styling/SuccessfulPage.css";
@@ -11,7 +11,6 @@ const BuySuccessfulPage = () => {
   const [ticketGenerated, setTicketGenerated] = useState(false);
   const [ticketDetails, setTicketDetails] = useState({});
   const [apiErr, setApiErr] = useState({});
-  const { ticket_id } = useParams();
 
   const location = useLocation();
   const concertDetails = location.state;
@@ -22,7 +21,7 @@ const BuySuccessfulPage = () => {
   useEffect(() => {
     const postBody = {
       name: concertDetails.name,
-      start_time: concertDetails.dates.start.localTime,
+      startTime: concertDetails.dates.start.localTime,
       date: concertDetails.dates.start.localDate,
       location: concertDetails._embedded.venues[0].city.name,
       price: concertDetails.priceRanges[0].min,

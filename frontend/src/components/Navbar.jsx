@@ -8,24 +8,38 @@ const Navbar = () => {
 
   return (
     <nav>
-      <button className = "nav-button" onClick={() => setMenuVisible(!menuVisible)}>Menu</button>
+      <button
+        className="nav-button"
+        onClick={() => setMenuVisible(!menuVisible)}
+      >
+        Menu
+      </button>
       {menuVisible && (
-        <ul clasName = "menu">
+        <ul className="menu">
           <li>
-            <Link to={`/`}><button className ="menu-button">{"Concerts"}</button></Link>
+            <Link to={`/`}>
+              <button className="menu-button">{"Concerts"}</button>
+            </Link>
           </li>
           {Object.keys(user).length ? (
             <>
               <li>
-                <Link to={`/profile`}> <button className ="menu-button">{"Profile"} </button></Link>
+                <Link to={`/profile`}>
+                  {" "}
+                  <button className="menu-button">{"Profile"} </button>
+                </Link>
               </li>
               <li>
-                <Link to={`/mytickets`}><button className ="menu-button">{"Tickets"} </button></Link>
+                <Link to={`/mytickets`}>
+                  <button className="menu-button">{"Tickets"} </button>
+                </Link>
               </li>
             </>
           ) : (
             <li>
-              <Link to={`/login`}><button className ="menu-button">{"Login"} </button></Link>
+              <Link to={`/login`}>
+                <button className="menu-button">{"Login"} </button>
+              </Link>
             </li>
           )}
         </ul>
