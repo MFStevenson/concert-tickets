@@ -47,14 +47,14 @@ h2 {
 }
 
 .search-button {
-  background-color: rgb(130, 174, 138);
-  box-shadow: 0 2px 0 rgb(92, 136, 103);
+  background-color: rgb(183, 53, 4);
+  box-shadow: 0 2px 0 orangered;
   border-radius: 5px;
 }
 
 .search-button:hover {
-  box-shadow: 0 1px 0 rgb(92, 136, 103);
-  background-color: rgb(115, 154, 122);
+  box-shadow: 0 1px 0 orangered;
+  background-color: rgb(183, 53, 4);
 }
 
 .search-bar {

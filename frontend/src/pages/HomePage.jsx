@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import { getConcerts } from "../utils/api";
 import Loading from "../components/Loading";
 import "../styling/HomePage.css";
-
 const HomePage = () => {
   const [concerts, setConcerts] = useState([]);
+  const [filteredConcerts, setFilteredConcerts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [isLoading, setIsLoading] = useState(true);
 
@@ -13,7 +13,9 @@ const HomePage = () => {
     setIsLoading(true);
     getConcerts()
       .then((res) => {
-        setConcerts(res.data._embedded.events);
+        const allConcerts = res.data._embedded.events;
+        setConcerts(allConcerts);
+        setFilteredConcerts(allConcerts);
         setIsLoading(false);
       })
       .catch((error) => {
@@ -23,11 +25,16 @@ const HomePage = () => {
   }, []);
 
   const handleSearch = (e) => {
-    setSearchTerm(e.target.value);
+    e.preventDefault();
+
+    const searchTerm = e.target.value.toLowerCase();
+    setSearchTerm(searchTerm);
+
+    // Update filteredConcerts based on the search term
     const searchedConcerts = concerts.filter((concert) =>
-      concert.name.toLowerCase().includes(searchTerm.toLowerCase())
+      concert.name.toLowerCase().includes(searchTerm)
     );
-    setConcerts(searchedConcerts);
+    setFilteredConcerts(searchedConcerts);
   };
 
   if (isLoading) {
@@ -54,17 +61,17 @@ const HomePage = () => {
 
           <button className="search-button" onClick={handleSearch}>
             {" "}
-            Search{" "}
+            Clear{" "}
           </button>
 
           <div className="concert-grid">
             <ul>
-              {concerts.map((concert, index) => (
+              {filteredConcerts.map((concert) => (
                 <li key={concert.id} className="concert-list">
                   <Link className="concert-link" to={`/concerts/${concert.id}`}>
                     <p className="concert-block">{concert.name} </p>
                     <img
-                      src={concerts[index].images[0].url}
+                      src={concert.images[0].url}
                       alt={`${concert.name} image`}
                     />
                   </Link>
