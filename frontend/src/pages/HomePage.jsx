@@ -25,7 +25,7 @@ const HomePage = () => {
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
     const searchedConcerts = concerts.filter((concert) =>
-      concert.name.toLowerCase().includes(e.target.value.toLowerCase())
+      concert.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
     setConcerts(searchedConcerts);
   };

@@ -8,34 +8,34 @@ const Navbar = () => {
 
   return (
     <nav>
-        <ul clasName = "menu">
-          <li>
-            <Link to={`/`}>
-              <button className="menu-button">{"Concerts"}</button>
-            </Link>
-          </li>
-          {Object.keys(user).length ? (
-            <>
-              <li>
-                <Link to={`/profile`}>
-                  {" "}
-                  <button className="menu-button">{"Profile"} </button>
-                </Link>
-              </li>
-              <li>
-                <Link to={`/mytickets`}>
-                  <button className="menu-button">{"Tickets"} </button>
-                </Link>
-              </li>
-            </>
-          ) : (
+      <ul className="menu">
+        <li>
+          <Link to={`/`}>
+            <button className="menu-button">{"Concerts"}</button>
+          </Link>
+        </li>
+        {Object.keys(user).length ? (
+          <>
             <li>
-              <Link to={`/login`}>
-                <button className="menu-button">{"Login"} </button>
+              <Link to={`/profile`}>
+                {" "}
+                <button className="menu-button">{"Profile"} </button>
               </Link>
             </li>
-          )}
-        </ul>
+            <li>
+              <Link to={`/mytickets`}>
+                <button className="menu-button">{"Tickets"} </button>
+              </Link>
+            </li>
+          </>
+        ) : (
+          <li>
+            <Link to={`/login`}>
+              <button className="menu-button">{"Login"} </button>
+            </Link>
+          </li>
+        )}
+      </ul>
     </nav>
   );
 };
